@@ -9,9 +9,9 @@ import net.neoforged.neoforge.registries.DeferredItem
 import net.neoforged.neoforge.registries.DeferredRegister
 
 
-object Items {
+object ModItems {
     val itemRegistry: DeferredRegister.Items = DeferredRegister.createItems(ID)
-    var allBlocks = mutableMapOf<String, BlockItem>()
+    val allBlocks = mutableMapOf<String, BlockItem>()
 
     fun registerBlockItem(
         block: DeferredBlock<Block>,

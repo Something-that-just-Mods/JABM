@@ -1,7 +1,7 @@
 package io.jabm.block
 
 import io.jabm.JABM
-import io.jabm.item.Items
+import io.jabm.item.ModItems
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.SoundType
@@ -10,17 +10,17 @@ import net.neoforged.neoforge.registries.DeferredBlock
 import net.neoforged.neoforge.registries.DeferredRegister
 
 
-object Blocks {
+object ModBlocks {
+
     val blockRegistry: DeferredRegister.Blocks = DeferredRegister.createBlocks(JABM.ID) // Block Registry
 
     private fun registerBlock(
         name: String,
         configureItemProperties: Item.Properties.() -> Unit = {},
-        configureProperties: BlockBehaviour.Properties.() -> Unit = {
-        }
+        configureProperties: BlockBehaviour.Properties.() -> Unit = {}
     ): DeferredBlock<Block> {
         val b = blockRegistry.registerSimpleBlock(name, BlockBehaviour.Properties.of().apply(configureProperties))
-        Items.registerBlockItem(b, configureItemProperties)
+        ModItems.registerBlockItem(b, configureItemProperties)
         return b
     }
 

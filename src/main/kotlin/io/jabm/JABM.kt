@@ -1,8 +1,7 @@
 package io.jabm
 
-import io.jabm.block.Blocks
-import io.jabm.block.Tab
-import io.jabm.item.Items
+import io.jabm.block.ModBlocks
+import io.jabm.item.ModItems
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.Mod
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent
@@ -18,9 +17,8 @@ object JABM {
     private val logger : Logger = LogManager.getLogger(ID)
     init {
         logger.log(Level.INFO, "Ja-BM!")
-        Blocks.blockRegistry.register(MOD_BUS)
-        Items.itemRegistry.register(MOD_BUS)
-        Tab.tabRegistry.register(MOD_BUS)
+        ModBlocks.blockRegistry.register(MOD_BUS)
+        ModItems.itemRegistry.register(MOD_BUS)
     }
 
     /* Apparently this is required for the game to start? */
