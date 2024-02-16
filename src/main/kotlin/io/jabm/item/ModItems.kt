@@ -7,20 +7,18 @@ import net.minecraft.world.level.block.Block
 import net.neoforged.neoforge.registries.DeferredBlock
 import net.neoforged.neoforge.registries.DeferredItem
 import net.neoforged.neoforge.registries.DeferredRegister
+import java.util.function.Function
 
 
 object ModItems {
     val itemRegistry: DeferredRegister.Items = DeferredRegister.createItems(ID)
-    val allBlocks = mutableMapOf<String, BlockItem>()
+    private val allItems = mutableMapOf<String, Function<Item.Properties, out Item>>()
 
     fun registerBlockItem(
         block: DeferredBlock<Block>,
         configureItemProperties: Item.Properties.() -> Unit = {}
     ): DeferredItem<BlockItem>? {
-        val b = itemRegistry.registerSimpleBlockItem(block.id.path, block, Item.Properties().apply(configureItemProperties))
-        val item = b.get()
-        allBlocks[b.id.path] = item
-
-        return b
+        val i = itemRegistry.registerSimpleBlockItem(block.id.path, block, Item.Properties().apply(configureItemProperties))
+        return i
     }
 }
