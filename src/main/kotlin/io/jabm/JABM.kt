@@ -1,7 +1,7 @@
 package io.jabm
 
-import io.jabm.block.ModBlocks
-import io.jabm.item.ModItems
+import io.jabm.registry.ModBlocks
+import io.jabm.registry.ModItems
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.Mod
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent

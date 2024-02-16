@@ -1,4 +1,4 @@
-package io.jabm.item
+package io.jabm.registry
 
 import io.jabm.JABM.ID
 import net.minecraft.world.item.BlockItem
