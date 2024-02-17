@@ -21,3 +21,9 @@ description='''${mod_description}'''
     versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
+[[dependencies.jabm]]
+    modId="terrablender"
+    type="required"
+    versionRange="${terrablender_version_range}"
+    ordering="NONE"
+    side="BOTH"

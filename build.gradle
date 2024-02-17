@@ -54,11 +54,16 @@ repositories {
         url = 'https://thedarkcolour.github.io/KotlinForForge/'
         content { includeGroup "thedarkcolour" }
     }
+    maven {
+        name = 'TerraBlender'
+        url = 'https://maven.minecraftforge.net/'
+    }
 }
 
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
     implementation 'thedarkcolour:kotlinforforge-neoforge:4.10.0'
+    implementation "com.github.glitchfiend:TerraBlender-neoforge:${minecraft_version}-3.3.0.12"
 }
 
 tasks.withType(ProcessResources).configureEach {
@@ -68,6 +73,7 @@ tasks.withType(ProcessResources).configureEach {
             loader_version_range: loader_version_range,
             mod_id              : mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
             mod_authors         : mod_authors, mod_description: mod_description, pack_format_number: pack_format_number,
+            terrablender_version_range: terrablender_version_range,
     ]
     inputs.properties replaceProperties
 
