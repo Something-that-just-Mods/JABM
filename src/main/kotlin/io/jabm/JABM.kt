@@ -3,6 +3,7 @@ package io.jabm
 import io.jabm.registry.ModBlocks
 import io.jabm.registry.ModItems
 import io.jabm.registry.ModTabs
+import io.jabm.worldgen.biome.ModTerraBlender
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.Mod
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent
@@ -21,6 +22,7 @@ object JABM {
         ModBlocks.blockRegistry.register(MOD_BUS)
         ModItems.itemRegistry.register(MOD_BUS)
         ModTabs.tabRegistry.register(MOD_BUS)
+        ModTerraBlender.registerBiomes()
     }
 
     /* Apparently this is required for the game to start? */
